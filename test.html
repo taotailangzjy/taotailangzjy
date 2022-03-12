@@ -5,8 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div#tip{
+            background-color: antiquewhite;
+        }
+    </style>
 </head>
 <body>
-    <h1>just a test txt</h1>
+
+    <!-- 默认的display的属性为空 -->
+
+    <div id="tip">just a test txt</div>
+    <button id="btn">按一下</button>
+
+    <script>
+        a=document.getElementById("tip")
+        function pp(){
+            if (a.style.display==''){
+                a.style.display='none'
+            }
+            else{
+                a.style.display=''
+            }
+           
+        }
+    </script>
 </body>
 </html>

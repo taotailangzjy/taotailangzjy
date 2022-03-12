@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+    <style>
+        div.scroll{
+            width: 200px;
+            margin: 30px auto;
+            border: 1px solid red;
+            background-color: rgb(red, green, blue);
+        }
+        div#content{
+            width: 600px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+            /* background-color: rgba(1, 1, 1, 1); */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="scroll">
+            <input type="range" min="0" max="255" value="0" id="red">
+        </div>
+        <div class="scroll">
+            <input type="range" min="0" max="255" value="0" id="blue">
+        </div>
+        <div class="scroll">
+            <input type="range" min="0" max="255" value="0" id="yellow">
+        </div>
+        <div>
+            <button onclick="bb()">按一下</button>
+        </div>        
+    </div>
+    <script>
+        function getdom(id){
+            return document.getElementById(id);
+        }
+        var r=getdom("red");
+        var b=getdom("blue");
+        var y=getdom("yellow");
+        var bg=getdom("content")
+        r.onchange=function(){            
+            bg.style.backgroundColor="yellow"
+        }
+        b.onchange=function(){
+            document.getElementById("content").style.backgroundColor="rgba(0,b.value,0,1)";
+        }
+        y.onchange=function(){
+            document.getElementById("content").style.backgroundColor="rgba(0,0,y.value,1)";
+        }
+        function bb() {
+
+            document.getElementById("content").style.backgroundColor="red"
+
+        }  
+          
+    </script>
+    
+    
+</body>
+</html>
